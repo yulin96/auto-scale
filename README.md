@@ -27,6 +27,13 @@ const element = document.getElementById('elementId') as HTMLDivElement
 autoScale(element, 500)
 ```
 
+```html
+<div style="width: 100%; height: 50px; display: flex; align-items: center; justify-content: center">
+  <!-- 需要有动态宽度才能正常生效 -->
+  <div id="scale-box"></div>
+</div>
+```
+
 ## 参数
 
 - `element` (`HTMLDivElement | string`): 需要自动缩放的元素或元素的 id。

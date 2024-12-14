@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <script>
+      function test() {
+        const box = document.querySelector('#scale-box')
+        box.innerHTML = box.innerHTML + 'hello world!'
+      }
+    </script>
+  </head>
+  <body>
+    <div
+      style="width: 100%; height: 50px; display: flex; align-items: center; justify-content: center"
+    >
+      <div id="scale-box"></div>
+    </div>
+
+    <hr />
+    <button onclick="test()">测试</button>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

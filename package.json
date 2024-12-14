@@ -1,0 +1,39 @@
+{
+  "name": "auto-scale",
+  "version": "0.0.5",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "homepage": "https://github.com/yulin96/auto-scale",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yulin96/auto-scale"
+  },
+  "bugs": {
+    "url": "https://github.com/yulin96/auto-scale/issues"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsup",
+    "pack": "pnpm run build && pnpm pack"
+  },
+  "keywords": [
+    "dom",
+    "scale",
+    "html"
+  ],
+  "author": "yulinzhao",
+  "license": "MIT",
+  "description": "自动缩放dom元素",
+  "devDependencies": {
+    "@types/node": "^22.10.1",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2"
+  },
+  "packageManager": "pnpm@9.15.0"
+}

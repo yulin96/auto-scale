@@ -9,15 +9,15 @@
 ## 安装
 
 ```bash
-npm install auto-scale
+npm install @auto-scale/main
 # 或者使用 pnpm
-pnpm add auto-scale
+pnpm add @auto-scale/main
 ```
 
 ## 使用
 
 ```typescript
-import autoScale from 'auto-scale'
+import autoScale from '@auto-scale/main'
 
 // 使用元素的 id 和最大宽度
 autoScale('elementId', 500)

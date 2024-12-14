@@ -1,5 +1,5 @@
 {
-  "name": "@auto-scale",
+  "name": "auto-scale-box",
   "version": "0.0.2",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",

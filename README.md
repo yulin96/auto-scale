@@ -1,23 +1,23 @@
-# auto-scale
+# auto-scale-box
 
-`auto-scale` 是一个用于自动调整元素宽度的工具。它根据设定的最大宽度动态缩放指定的 HTML 元素。
+`auto-scale-box` 是一个用于自动调整元素宽度的工具。它根据设定的最大宽度动态缩放指定的 HTML 元素。
 
 ## 介绍
 
-`auto-scale` 函数可用于在网页中自动监测和调整指定元素的宽度。当元素的宽度超过设定的最大值时，函数会自动缩放该元素以适应最大宽度。
+`auto-scale-box` 函数可用于在网页中自动监测和调整指定元素的宽度。当元素的宽度超过设定的最大值时，函数会自动缩放该元素以适应最大宽度。
 
 ## 安装
 
 ```bash
-npm install auto-scale
+npm install auto-scale-box
 # 或者使用 pnpm
-pnpm add auto-scale
+pnpm add auto-scale-box
 ```
 
 ## 使用
 
 ```typescript
-import autoScale from 'auto-scale'
+import autoScale from 'auto-scale-box'
 
 // 使用元素的 id 和最大宽度
 autoScale('elementId', 500)

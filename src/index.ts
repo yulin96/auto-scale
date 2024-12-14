@@ -4,7 +4,7 @@
  * @param element 要进行缩放的HTMLDivElement元素或其ID字符串。
  * @param maxWidth 元素允许的最大宽度。
  */
-export default function autoScale(element: HTMLDivElement | string, maxWidth: number) {
+export default function autoScaleBox(element: HTMLDivElement | string, maxWidth: number) {
   document.onload = () => {
     const box = typeof element === 'string' ? document.getElementById(element) : element
     if (!box) throw new Error('Element not found')

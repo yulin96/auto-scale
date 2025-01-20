@@ -4,20 +4,19 @@
  * @param element 要进行缩放的HTMLDivElement元素或其ID字符串。
  * @param maxWidth 元素允许的最大宽度。
  */
-export default function autoScaleBox(element: HTMLDivElement | string, maxWidth: number) {
+export default function autoScaleBox(element: HTMLDivElement | string, maxWidth?: number) {
   const box = typeof element === 'string' ? document.getElementById(element) : element
   if (!box) throw new Error('Element not found')
 
   box.style.whiteSpace = 'nowrap'
 
+  maxWidth = maxWidth || box.parentElement?.clientWidth || window.innerWidth
+  scaleHtml(box, maxWidth)
+
   if ('ResizeObserver' in window) {
     const resizeObserver = new ResizeObserver((entries) => {
-      entries.forEach((entry) => {
-        const width = entry.contentRect.width || entry.borderBoxSize?.[0].inlineSize
-
-        if (width > maxWidth) {
-          box.style.transform = `scale(${maxWidth / width})`
-        }
+      entries.forEach(() => {
+        scaleHtml(box, maxWidth)
       })
     })
 
@@ -26,15 +25,18 @@ export default function autoScaleBox(element: HTMLDivElement | string, maxWidth:
     const observer = new MutationObserver((mutations) => {
       mutations.forEach((mutation) => {
         if (mutation.type === 'childList') {
-          const width = box.getBoundingClientRect().width
-
-          if (width > maxWidth) {
-            box.style.transform = `scale(${maxWidth / width})`
-          }
+          scaleHtml(box, maxWidth)
         }
       })
     })
 
     observer.observe(box, { childList: true, characterData: true, subtree: true })
+  }
+
+  function scaleHtml(box: HTMLElement, maxWidth: number) {
+    const width = box.clientWidth
+    if (width > maxWidth) {
+      box.style.transform = `scale(${maxWidth / width})`
+    }
   }
 }
